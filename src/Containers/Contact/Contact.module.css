@@ -1,7 +1,117 @@
-.Form {
-  background-color: rgb(139, 54, 54);
+.gridContainer {
+  display: grid;
+  height: inherit;
+  grid-template-columns: 1.8fr 2fr 1.8fr;
+  grid-template-rows: 1fr 4fr 1fr;
+  grid-template-areas:
+    "path path ."
+    ". form ."
+    ". . .";
 }
 
-.Form textarea {
+.childHamburger {
+  display: none;
+}
+
+.childLogo {
+  display: none;
+}
+
+.childPath {
+  grid-area: path;
+}
+
+.Form {
+  background-color: rgba(0, 0, 0, 0.5);
+  grid-area: form;
+  display: flex;
+  justify-content: center;
+}
+
+.Form form {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  justify-content: flex-start;
+}
+
+.Form form input {
+  font-size: 1.2em;
+}
+
+.Form form textarea {
   resize: none;
+  font-size: 1.2em;
+}
+
+.Form form button {
+  margin-top: 5vh;
+  align-self: center;
+  color: rgb(0, 0, 0);
+  background-color: rgb(233, 233, 233);
+  text-transform: uppercase;
+  padding: 1vh 3vh;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.2em;
+}
+
+.Form form button:hover {
+  color: #ffffff;
+  border: 4px solid;
+  background: rgba(0, 0, 0, 0.5);
+  border-color: #f6b93b;
+  transition: all 0.4s ease 0s;
+}
+
+.Form form button:disabled {
+  border: 4px solid rgba(133, 27, 27, 0.842);
+}
+
+.Form form label {
+  padding-top: 5vh;
+  padding-bottom: 1.2vh;
+  color: white;
+  text-align: left;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.7em;
+  letter-spacing: 0.04em;
+}
+
+.Form span {
+  color: rgb(255, 130, 57);
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .childPath {
+    display: none;
+  }
+  .childNav {
+    display: unset;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .childHamburger {
+    display: unset;
+    grid-area: hamburger;
+  }
+
+  .childLogo {
+    display: unset;
+    grid-area: logo;
+    justify-self: center;
+    padding: 1vh 0 0 1vw;
+  }
+
+  .gridContainer {
+    display: grid;
+    height: inherit;
+    grid-template-columns: 0.1fr 1.8fr;
+    grid-template-rows: 0.5fr 4fr;
+    grid-template-areas:
+      "hamburger logo "
+      "form form ";
+  }
 }

@@ -1,32 +1,32 @@
 import React, { Component } from "react";
 
 import Path from "../../Components/UI/Path/Path";
+import HamburgerMenu from "../../Components/ButtonsTRBL/HamburgerMenu/HamburgerMenu";
+import Logo from "../../Components/Logo/Logo";
 import styles from "./Contact.module.css";
 
 class Contact extends Component {
   state = {
     newMessage: { name: "", email: "", message: "" },
-    boolButton: true,
-    nameErrMsg: ""
+    boolButton: false,
+    nameErr: ""
   };
 
-  validateName = () => {
+  validateForm = () => {
     let name = this.state.newMessage.name;
-    let email = this.state.newMessage.email;
-    let message = this.state.newMessage.message;
     let regexAllLetters = /([0-9`~!@#$%^&*()-=_+[\];',./{}:"<>?\\])/gi;
     let regexSpace = /^(\s?\w+)+\s?$/;
     if (name.search(regexAllLetters) !== -1) {
-      this.setState({ boolButton: true, nameErrMsg: "Invalid name" });
+      this.setState({ boolButton: true, nameErr: "Invalid name" });
     } else if (name === "") {
-      this.setState({ boolButton: true, nameErrMsg: "" });
+      this.setState({ boolButton: true });
     } else if (!regexSpace.test(name)) {
       this.setState({
         boolButton: true,
-        nameErrMsg: "You have too many spaces"
+        nameErr: "Too many spaces"
       });
     } else {
-      this.setState({ boolButton: false, nameErrMsg: "" });
+      this.setState({ boolButton: false, nameErr: "" });
     }
     console.log(name.search(regexAllLetters));
   };
@@ -42,7 +42,7 @@ class Contact extends Component {
           [name]: value
         }
       };
-    }, this.validateName);
+    }, this.validateForm);
   };
 
   handleFormSubmit = e => {
@@ -72,8 +72,16 @@ class Contact extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <Path pathName={"CONTACT"} />
+      <div className={styles.gridContainer}>
+        <div className={styles.childPath}>
+          <Path pathName={"CONTACT"} />
+        </div>
+        <div className={styles.childHamburger}>
+          <HamburgerMenu />
+        </div>
+        <div className={styles.childLogo}>
+          <Logo />
+        </div>
         <div className={styles.Form}>
           <form onSubmit={this.handleFormSubmit}>
             <label htmlFor="name">Name:</label>
@@ -87,7 +95,7 @@ class Contact extends Component {
               onChange={this.handleInput}
               value={this.state.newMessage.name}
             />
-            {this.state.nameErrMsg}
+            {!this.state.boolButton ? null : <span>{this.state.nameErr}</span>}
 
             <label htmlFor="email">Email:</label>
             <input
@@ -106,9 +114,10 @@ class Contact extends Component {
               id="message"
               name="message"
               type="text"
-              rows="5"
+              rows="8"
               cols="33"
-              placeholder="..."
+              placeholder="Enter a message"
+              spellCheck={true}
               onChange={this.handleInput}
               value={this.state.newMessage.message}
             />
@@ -121,13 +130,8 @@ class Contact extends Component {
               Send
             </button>
           </form>
-          <p>
-            Name:{this.state.newMessage.name}, Email:
-            {this.state.newMessage.email}, Message:
-            {this.state.newMessage.message}
-          </p>
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 }

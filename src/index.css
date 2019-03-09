@@ -2,6 +2,10 @@ html {
   height: 100%;
   background: url(./assets/stars-min.jpg) center;
   background-size: cover;
+  box-sizing: border-box;
+}
+#root {
+  height: inherit;
 }
 
 body {
@@ -18,15 +22,6 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-/* BACKGROUND */
-@media (min-width: 681px) {
-  #root {
-    background: url(./assets/stars-min.jpg) center;
-    background-size: cover;
-    height: inherit;
-  }
 }
 
 /* BLINK ANIMATION */
@@ -51,7 +46,7 @@ code {
   }
 }
 
-@media (max-width: 680px) {
+/* @media (max-width: 680px) {
   html {
     background: url(./assets/stars-min.jpg);
     background-size: cover;
@@ -64,3 +59,10 @@ code {
     background-size: cover;
   }
 }
+@media (min-width: 681px) {
+  #root {
+    background: url(./assets/stars-min.jpg) center;
+    background-size: cover;
+    height: inherit;
+  }
+} */
