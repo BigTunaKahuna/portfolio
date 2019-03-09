@@ -1,0 +1,57 @@
+@media (min-width: 1001px) {
+  .LogoPath {
+    padding: 1vh 0 0 1vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .LogoPath p {
+    font-size: 5em;
+    font-family: "Orbitron", sans-serif;
+    margin: 0;
+    color: rgb(255, 255, 255);
+    padding-left: 1vw;
+  }
+
+  .LogoPathMobile {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .LogoPath {
+    display: none;
+  }
+
+  .LogoPathMobile {
+    padding-top: 4vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .LogoFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Space {
+    height: 2vh;
+  }
+
+  .LogoPathMobile p {
+    padding-top: 4vh;
+    font-size: 1.5em;
+    font-family: "Orbitron", sans-serif;
+    margin: 0;
+    color: rgb(255, 255, 255);
+    padding: 2vh 0 0 0.5vh;
+  }
+  .Phone {
+    display: flex;
+    flex-direction: column;
+  }
+}

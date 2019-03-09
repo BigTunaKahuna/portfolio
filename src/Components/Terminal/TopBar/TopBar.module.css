@@ -1,0 +1,17 @@
+.TopBar {
+  border-radius: 0.6em 0.6em 0 0;
+  background: linear-gradient(#8b8888, #727070);
+  height: 1.6em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: -1px;
+}
+
+.Center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}

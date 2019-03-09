@@ -1,0 +1,6 @@
+.Terminal {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  height: 100%;
+}

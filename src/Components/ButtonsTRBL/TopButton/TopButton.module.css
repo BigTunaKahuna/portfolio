@@ -1,0 +1,33 @@
+/*.TopButton {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: fit-content;
+}*/
+.TopButton {
+  width: fit-content;
+  margin: 0;
+}
+
+.Github {
+  text-decoration: none;
+  color: white;
+}
+
+.Github h2 {
+  padding: 7px 0.2vw 3px 0.5vw;
+  font-family: "Orbitron", sans-serif;
+  letter-spacing: 0.3vw;
+  background-color: black;
+}
+
+.Github h2:hover {
+  background-color: rgb(255, 153, 0);
+}
+
+.Active {
+  text-decoration: none;
+  color: red;
+}

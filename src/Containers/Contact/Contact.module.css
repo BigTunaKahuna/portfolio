@@ -1,0 +1,7 @@
+.Form {
+  background-color: rgb(139, 54, 54);
+}
+
+.Form textarea {
+  resize: none;
+}

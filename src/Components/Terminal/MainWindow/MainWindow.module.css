@@ -1,0 +1,80 @@
+.MainWindow {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.83);
+  border-radius: 0 0 0.6em 0.6em;
+}
+
+.MainWindow p {
+  margin: 0;
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 1.5em;
+}
+
+.MainWindow span {
+  margin: 0;
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 1.5em;
+  font-weight: normal;
+}
+
+.MainWindow__user {
+  display: flex;
+  justify-content: flex-start;
+  padding: 2.5vh 1.5vw 0 2.5vw;
+}
+
+.MainWindow__user p {
+  color: green;
+}
+
+.MainWindow__text {
+  text-align: left;
+  padding: 2.5vh 2.5vw 0 0;
+}
+
+.Wrapper {
+  display: flex;
+  flex-direction: row;
+  padding-top: 4vh;
+  padding-left: 6vw;
+}
+
+/* BLINK */
+
+/* LAPTOP*/
+@media (max-width: 1024px) {
+  .MainWindow {
+    height: 100%;
+  }
+
+  .MainWindow p {
+    font-size: 1.3em;
+  }
+}
+
+/* TABLET - LANDSCAPE */
+@media (max-width: 862px) and (orientation: landscape) {
+  .MainWindow {
+    border-radius: 0 0 0.6em 0.6em;
+    height: 100%;
+  }
+}
+
+/* PHONE */
+@media (max-width: 680px) {
+  .MainWindow {
+    border-radius: 0;
+  }
+
+  .MainWindow p {
+    font-size: 1.3em;
+  }
+}
+
+/* PHONE - LANDSCAPE */
+@media (max-width: 680px) and (orientation: landscape) {
+  .MainWindow {
+    border-radius: 0 0 0.6em 0.6em;
+    height: 100%;
+  }
+}
